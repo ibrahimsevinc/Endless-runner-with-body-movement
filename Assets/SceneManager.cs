@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+//Play ekranýnda sahneleri degistirmek icin kullandigim .cs dosyasi
+
 public class Button : MonoBehaviour
 {
     // Start is called before the first frame update

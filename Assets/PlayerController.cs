@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using DG.Tweening;
+using System.IO;
 
 public class PlayerController : MonoBehaviour
 {
@@ -39,6 +40,16 @@ public class PlayerController : MonoBehaviour
         hareketKoordinatlari[2] = seritGenisligi * (1);
 
         rb = gameObject.AddComponent<Rigidbody>(); // Rigidbody bileþenini ekleyin  
+
+
+        //Setting araylarýný yukleme
+        string json = File.ReadAllText(Application.dataPath + "/settings.json");
+        SettingsData data = JsonUtility.FromJson<SettingsData>(json);
+
+
+        
+        karakterHizi = data.oyunHizi;
+        tuslarlaOyna = data.tuslarlaOyna;
     }
 
     void Update()
@@ -55,12 +66,12 @@ public class PlayerController : MonoBehaviour
             //Yon tuslariyla oynamak istendigi zaman;
             if(tuslarlaOyna)
             {
+                uDPReceive.startRecieving = false;
+
                 // Karakterin hareketi sadece þu an hareket etmiyorsa gerçekleþir
                 if (!isMoving)
                 {
                     //UDP haberleþmesini kapatýyor
-                    uDPReceive.startRecieving = false;
-
                     if (Input.GetKeyDown(KeyCode.RightArrow))
                     {
                         ChangeLaneTus(1); // Saða git
@@ -91,6 +102,7 @@ public class PlayerController : MonoBehaviour
             else if (!tuslarlaOyna)
             {
                 uDPReceive.startRecieving = true;
+
                 //Udp ile yollanan verileri alma
                 try
                 {

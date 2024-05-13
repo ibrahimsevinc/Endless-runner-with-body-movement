@@ -22,8 +22,8 @@ public class TriggerDuvari : MonoBehaviour
 
     public int aSabiti = 100; //Platfrom oluþtururken kullanilcak sabit (Elle ayarlýyoruz)
 
-    public int kupX = 15; // Küp geniþliði
-    public int kupY = 10; // Küp yüksekliði
+    public int kupX = 7; // Küp geniþliði
+    public int kupY = 5; // Küp yüksekliði
     public int kupZ = 30; // Küp uzunluðu 
 
     PlatformManager platformManager = new PlatformManager();
@@ -135,7 +135,7 @@ public class TriggerDuvari : MonoBehaviour
                 float positionX = kupKoordinatlari[engelSeritleri[k]];
 
                 // Küpü oluþtur
-                GameObject cube = Instantiate(kup, new Vector3(positionX, 0f, currentPositionZ), Quaternion.identity);
+                GameObject cube = Instantiate(kup, new Vector3(positionX, 2.5f, currentPositionZ), Quaternion.identity);
                 cube.transform.localScale = new Vector3(kupX, kupY, kupZ);
                 cube.transform.parent = yeniPlatform.transform; // Küpü yeni platformun alt nesnesi yap
 
@@ -191,8 +191,8 @@ public class TriggerDuvari : MonoBehaviour
                 float positionX = koordinatListesi[engelSeritleri[k]];
 
                 // Küpü oluþtur
-                GameObject cube = Instantiate(kup, new Vector3(positionX, 0f, currentPositionZ), Quaternion.identity);
-                cube.transform.localScale = new Vector3(7, 10, 30);
+                GameObject cube = Instantiate(kup, new Vector3(positionX, 2.5f, currentPositionZ), Quaternion.identity);
+                cube.transform.localScale = new Vector3(kupX, kupY, kupZ);
                 cube.transform.parent = yeniPlatform.transform; // Küpü yeni platformun alt nesnesi yap
 
 
