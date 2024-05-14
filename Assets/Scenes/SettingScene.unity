@@ -442,6 +442,7 @@ MonoBehaviour:
   toogleSecimi: {fileID: 388994988}
   dropdownSecimi: {fileID: 415977055}
   karkaterHiziText: {fileID: 745429618}
+  UdpVeriAlma: {fileID: 0}
 --- !u!4 &256659125
 Transform:
   m_ObjectHideFlags: 0
@@ -634,8 +635,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256659124}
         m_TargetAssemblyTypeName: SceneManagerSettings, Assembly-CSharp
-        m_MethodName: tuslarlaOyna
-        m_Mode: 6
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1125,19 +1126,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 256659124}
-        m_TargetAssemblyTypeName: SceneManagerSettings, Assembly-CSharp
-        m_MethodName: tuslarlaOyna
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 1
 --- !u!1 &718547278
 GameObject:
@@ -2144,19 +2133,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 256659124}
-        m_TargetAssemblyTypeName: SceneManagerSettings, Assembly-CSharp
-        m_MethodName: tuslarlaOyna
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 1
 --- !u!1 &1430889204
 GameObject:

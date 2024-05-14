@@ -18,7 +18,6 @@ public class UDPReceive : MonoBehaviour
 
     public void Start()
     {
-
         receiveThread = new Thread(
         new ThreadStart(ReceiveData));
         receiveThread.IsBackground = true;
@@ -29,12 +28,14 @@ public class UDPReceive : MonoBehaviour
     // receive thread
     private void ReceiveData()
     {
-        client = new UdpClient(port);
+        portOlustur();
+
         while (startRecieving)
         {
 
             try
             {
+                
                 IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
                 byte[] dataByte = client.Receive(ref anyIP);
                 data = Encoding.UTF8.GetString(dataByte);
@@ -48,4 +49,15 @@ public class UDPReceive : MonoBehaviour
         }
     }
 
+    private void portOlustur()
+    {
+        try
+        {
+            client = new UdpClient(port);
+        }
+        catch (SocketException err)
+        {
+            print(err.ToString());
+        }
+    }
 }

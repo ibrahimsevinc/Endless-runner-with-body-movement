@@ -12,11 +12,11 @@ public class HitBox : MonoBehaviour
         UIManagerScript = GameObject.Find("UI Manager").GetComponent<UIManager>();
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
-
         if (other.CompareTag("Engel"))
         {
             Debug.Log("Engele Carpti");
             UIManagerScript.GetComponent<Canvas>().enabled = true;
+            playerController.UdpVeriAlma.startRecieving = false;
             playerController.oyunDurumu = false;
         }
     }

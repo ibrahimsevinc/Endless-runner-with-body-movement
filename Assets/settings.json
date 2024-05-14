@@ -1,6 +1,6 @@
 {
-    "oyunHizi": 70,
+    "oyunHizi": 50,
     "tuslarlaOyna": true,
-    "zorlukSecimi": "Zor",
-    "zorlukSecimiSayisalDegeri": 2
+    "zorlukSecimi": "Orta",
+    "zorlukSecimiSayisalDegeri": 1
 }

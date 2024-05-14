@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb; // Rigidbody deðiþkeni
 
     private bool isJumping = false; // Zýplama iþlemi kontrolü
-    public UDPReceive uDPReceive; //Udp transferi için gerekli nesne
+    public UDPReceive UdpVeriAlma; //Udp transferi için gerekli nesne
 
     private string yollananVeri;
     private float yonBilgisi;
@@ -46,10 +46,13 @@ public class PlayerController : MonoBehaviour
         string json = File.ReadAllText(Application.dataPath + "/settings.json");
         SettingsData data = JsonUtility.FromJson<SettingsData>(json);
 
-
         
         karakterHizi = data.oyunHizi;
         tuslarlaOyna = data.tuslarlaOyna;
+
+        oyunDurumu = true;
+
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -66,7 +69,7 @@ public class PlayerController : MonoBehaviour
             //Yon tuslariyla oynamak istendigi zaman;
             if(tuslarlaOyna)
             {
-                uDPReceive.startRecieving = false;
+                UdpVeriAlma.startRecieving = false;
 
                 // Karakterin hareketi sadece þu an hareket etmiyorsa gerçekleþir
                 if (!isMoving)
@@ -101,12 +104,12 @@ public class PlayerController : MonoBehaviour
             //Beden hareketleriyle oynanmak istendigi zaman
             else if (!tuslarlaOyna)
             {
-                uDPReceive.startRecieving = true;
+                UdpVeriAlma.startRecieving = true;
 
                 //Udp ile yollanan verileri alma
                 try
                 {
-                    yollananVeri = uDPReceive.data;
+                    yollananVeri = UdpVeriAlma.data;
 
                     yonBilgisi = float.Parse(yollananVeri);
                 }
@@ -129,19 +132,12 @@ public class PlayerController : MonoBehaviour
                 {
                     ChangeLaneVucut(0);
                 }
-
             }
-
         }
         else
         {
-            karakterHizi = 0;
-            uDPReceive.client.Close();
-            uDPReceive.startRecieving = false;
             Durdur();
         }
-
-
     }
 
     void ChangeLaneTus(int direction)
@@ -204,6 +200,8 @@ public class PlayerController : MonoBehaviour
 
     public void Durdur()
     {
+        karakterHizi = 0;
+
         // Karakterin tüm yönlerdeki hýzlarýný sýfýrla
         rb.velocity = Vector3.zero;
 
