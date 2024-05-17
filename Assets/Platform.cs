@@ -21,7 +21,7 @@ public class Platform : MonoBehaviour
         kupKoordinatlari[2] = seritGenisligi * (1);
 
         TriggerDuvari triggerDuvariInstance = new TriggerDuvari();
-        triggerDuvariInstance.CreateCubesBaslangic(platformPrefab, cubePrefab, baslangicMesafesi, kupKoordinatlari, 8);
+        triggerDuvariInstance.CreateCubesBaslangic(platformPrefab, cubePrefab, baslangicMesafesi, kupKoordinatlari, 6);
     }
 
   

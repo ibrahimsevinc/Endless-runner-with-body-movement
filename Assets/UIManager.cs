@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
 
     public GameObject PauseManu;
 
-
     public void Pause()
     {
         Time.timeScale = 0;

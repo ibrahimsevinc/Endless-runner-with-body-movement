@@ -522,6 +522,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platform: {fileID: 1642933911}
+  pauseClickButton: {fileID: 534728145}
+  resumeClickButton: {fileID: 1124846476}
+  restartClickButton: {fileID: 1518767155}
   karakterHizi: 30
   ziplamaYuksekligi: 10
   dususHizi: 1000
@@ -672,8 +675,8 @@ RectTransform:
   m_Children:
   - {fileID: 2029541598}
   - {fileID: 335854294}
-  - {fileID: 1518767154}
   - {fileID: 1217032866}
+  - {fileID: 1518767154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -771,7 +774,7 @@ GameObject:
   - component: {fileID: 534728145}
   m_Layer: 5
   m_Name: Pause
-  m_TagString: Untagged
+  m_TagString: PauseButtonTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -902,7 +905,7 @@ GameObject:
   - component: {fileID: 641177581}
   - component: {fileID: 641177580}
   m_Layer: 5
-  m_Name: Game Over Text
+  m_Name: Pause Menu Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1629,7 +1632,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055116224}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1752,7 +1755,7 @@ GameObject:
   - component: {fileID: 1124846476}
   m_Layer: 5
   m_Name: Resume Button
-  m_TagString: Untagged
+  m_TagString: ResumeButtonTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2134,7 +2137,7 @@ GameObject:
   - component: {fileID: 1518767155}
   m_Layer: 5
   m_Name: Restart Button
-  m_TagString: Untagged
+  m_TagString: RestartButtonTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3012,12 +3015,12 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 705507995}
+  - {fileID: 392646403}
+  - {fileID: 1857638149}
   - {fileID: 480692363}
   - {fileID: 934273788}
   - {fileID: 1379265736}
-  - {fileID: 705507995}
-  - {fileID: 1857638149}
-  - {fileID: 392646403}
   - {fileID: 3337806871544234573}
   - {fileID: 1999254698}
   - {fileID: 69915091}

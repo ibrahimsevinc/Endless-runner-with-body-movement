@@ -19,7 +19,6 @@ public class SceneManagerSettings : MonoBehaviour
     int zorlukSecimiSayisalDegeri;
     int karakterHizi;
 
-    public UDPReceive UdpVeriAlma;
 
 
     void Start()

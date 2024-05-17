@@ -15,10 +15,10 @@ public class TriggerDuvari : MonoBehaviour
     int platformUzunlugu = 500;            //Platform Uzunlugu
     public float seritGenisligi;     // Bir þeridin ne kadar geniþ olduðu
 
-    public int olusacakYanalSeritSayisi = 10; // Oluþturulacak yanal þerit sayýsý
-    
-    public float kuplerArasiMesafe = 30f; // Þeritler arasý mesafe
+    public int olusacakYanalSeritSayisi = 8; // Oluþturulacak yanal þerit sayýsý
 
+    //public float kuplerArasiMesafe = 30f; // Þeritler arasý mesafe
+    public float kuplerArasiMesafe = 50f; // Þeritler arasý mesafe
 
     public int aSabiti = 100; //Platfrom oluþtururken kullanilcak sabit (Elle ayarlýyoruz)
 
@@ -135,7 +135,9 @@ public class TriggerDuvari : MonoBehaviour
                 float positionX = kupKoordinatlari[engelSeritleri[k]];
 
                 // Küpü oluþtur
+                
                 GameObject cube = Instantiate(kup, new Vector3(positionX, 2.5f, currentPositionZ), Quaternion.identity);
+                kupY = 5;
                 cube.transform.localScale = new Vector3(kupX, kupY, kupZ);
                 cube.transform.parent = yeniPlatform.transform; // Küpü yeni platformun alt nesnesi yap
 
