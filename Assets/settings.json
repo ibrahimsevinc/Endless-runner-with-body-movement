@@ -1,6 +1,6 @@
 {
     "oyunHizi": 30,
-    "tuslarlaOyna": false,
-    "zorlukSecimi": "Basit",
+    "tuslarlaOyna": true,
+    "zorlukSecimi": "",
     "zorlukSecimiSayisalDegeri": 0
 }

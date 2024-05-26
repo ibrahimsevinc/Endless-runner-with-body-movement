@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Diagnostics;
 
 //Settings ekranýnda ayarlarý ve sahneleri yonetmek icin kullandigim .cs dosyasi
 
@@ -13,6 +14,7 @@ public class SceneManagerSettings : MonoBehaviour
     public Toggle toogleSecimi;
     public TMP_Dropdown dropdownSecimi;
     public TextMeshProUGUI karkaterHiziText;
+    public TextMeshProUGUI bekleyinText;
     bool toogleDegeri;
 
     string zorlukSecimi;
@@ -45,6 +47,8 @@ public class SceneManagerSettings : MonoBehaviour
         data.zorlukSecimi = zorlukSecimi;
         data.zorlukSecimiSayisalDegeri = zorlukSecimiSayisalDegeri;
 
+
+
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(Application.dataPath + "/settings.json", json);
     }
@@ -58,6 +62,7 @@ public class SceneManagerSettings : MonoBehaviour
         toogleSecimi.isOn = data.tuslarlaOyna;
         dropdownSecimi.value = data.zorlukSecimiSayisalDegeri;
         karkaterHiziText.text = data.oyunHizi.ToString();
+        karakterHizi = data.oyunHizi;
     }
 
     public void comboBoxSecimi(int val)
@@ -85,5 +90,36 @@ public class SceneManagerSettings : MonoBehaviour
         }
     }
 
-    
+
+    public void toogleDegeriDegisirse()
+    {
+        toogleDegeri = toogleSecimi.isOn;
+
+        Process process = new Process();
+
+
+        process.StartInfo.FileName = "cmd.exe";
+        process.StartInfo.Arguments = "/C python \"" + Application.dataPath + "/vucutTakip.py\"";
+        //process.StartInfo.RedirectStandardOutput = true; // Çýktýyý yeniden yönlendirmek için
+        process.StartInfo.UseShellExecute = false; // Komutun çýktýsýný almak için bu false olmalý
+        process.StartInfo.CreateNoWindow = true; // Konsol penceresi göstermemek için
+
+        if (toogleDegeri)
+        {
+            // Tikli ise (Tuþla oyna)
+
+        }
+        if (!toogleDegeri)
+        {
+            // Tiksiz ise (Hareket ile oyna)
+
+            bekleyinText.text = "Python kodu çalýþana kadar lütfen bekleyiniz...";
+            process.Start();
+
+            //string output = process.StandardOutput.ReadLine();
+        }
+    }
+
+
+
 }

@@ -15,10 +15,10 @@ public class TriggerDuvari : MonoBehaviour
     int platformUzunlugu = 500;            //Platform Uzunlugu
     public float seritGenisligi;     // Bir þeridin ne kadar geniþ olduðu
 
-    public int olusacakYanalSeritSayisi = 8; // Oluþturulacak yanal þerit sayýsý
+    private int olusacakYanalSeritSayisi = 7; // Oluþturulacak yanal þerit sayýsý
 
     //public float kuplerArasiMesafe = 30f; // Þeritler arasý mesafe
-    public float kuplerArasiMesafe = 50f; // Þeritler arasý mesafe
+    private float kuplerArasiMesafe = 50f; // Þeritler arasý mesafe
 
     public int aSabiti = 100; //Platfrom oluþtururken kullanilcak sabit (Elle ayarlýyoruz)
 
@@ -100,6 +100,7 @@ public class TriggerDuvari : MonoBehaviour
         // Her bir sýra için
         for (int i = 0; i < olusacakYanalSeritSayisi; i++)
         {
+            Debug.Log(i);
             // Rastgele sayýda engel oluþtur
             int engelSayisi = Random.Range(1, 3); // 1 veya 2 engel
 
