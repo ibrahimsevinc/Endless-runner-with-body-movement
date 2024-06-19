@@ -147,9 +147,9 @@ In the image below, you can see the live feed from the camera with three vertica
 In this stage, an endless runner game is developed in Unity. The game can be controlled both by keyboard and body movements. When body movement control is selected, the Python script from Stage 1 starts automatically. The game avatar moves left and right and avoids obstacles based on the detected body movements.
 
 ### **Unity Setup**
-1.Open your Unity project.
-2.Import the necessary assets and scripts.
-3.Integrate the Python communication script to handle input from the body movement detection.
+1. Open your Unity project.
+2. Import the necessary assets and scripts.
+3. Integrate the Python communication script to handle input from the body movement detection.
 
 ### **How to Play**
 **1.Using Keyboard**
